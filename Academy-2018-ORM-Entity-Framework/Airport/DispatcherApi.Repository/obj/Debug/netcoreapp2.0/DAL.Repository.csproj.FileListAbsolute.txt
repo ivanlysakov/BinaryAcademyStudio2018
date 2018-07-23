@@ -1,0 +1,10 @@
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\obj\Debug\netcoreapp2.0\DAL.Repository.csproj.CoreCompileInputs.cache
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\obj\Debug\netcoreapp2.0\DAL.Repository.AssemblyInfoInputs.cache
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\obj\Debug\netcoreapp2.0\DAL.Repository.AssemblyInfo.cs
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\bin\Debug\netcoreapp2.0\DAL.Repository.deps.json
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\bin\Debug\netcoreapp2.0\DAL.Repository.dll
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\bin\Debug\netcoreapp2.0\DAL.Repository.pdb
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\obj\Debug\netcoreapp2.0\DAL.Repository.dll
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\obj\Debug\netcoreapp2.0\DAL.Repository.pdb
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\bin\Debug\netcoreapp2.0\DAL.Repository.runtimeconfig.json
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\DispatcherApi.Repository\bin\Debug\netcoreapp2.0\DAL.Repository.runtimeconfig.dev.json

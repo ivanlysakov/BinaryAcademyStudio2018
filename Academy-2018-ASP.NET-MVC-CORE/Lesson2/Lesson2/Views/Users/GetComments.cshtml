@@ -1,0 +1,44 @@
+﻿@model List<Lesson2.Models.Post>
+@{
+    ViewData["Title"] = "GetComments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@if (@ViewBag.UserId >= 1 && ViewBag.UserId <= 100)
+{
+    <h2>User with has:</h2>
+    <div>
+        <br />
+        <table class="table table-striped table-hover">
+            <tr>
+                <td> Id </td>
+                <td> Body</td>
+                <td> CommentsCount </td>
+
+            </tr>
+            <tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td> @item.Id </td>
+                    <td> @item.Body
+                    <td> @item.CommentsCount </td>
+
+
+                </tr>
+            }
+
+            </table>
+            <br />
+
+        </div>
+    }
+
+    else
+    {
+    <h2>Invalid User ID: @ViewBag.UserId</h2>
+    }
+
+

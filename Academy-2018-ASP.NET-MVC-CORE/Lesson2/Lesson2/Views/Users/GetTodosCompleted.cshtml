@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "GetTodosCompleted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Lesson2.Models.Helpers.UserTodos
+
+@using (Html.BeginForm("GetTodosCompleted", "Users", FormMethod.Post))
+{
+    <h2>Uncompleted Todos</h2>
+    <p>Please enter User ID:</p>
+    @Html.TextBoxFor(x => x.User.Id);
+    <input type="submit" class="btn btn-primary" value="Get" />
+    @Html.ValidationMessageFor(m => m.User.Id, "User ID must be from range 1..100");
+
+
+}
+
+@if (Model != null)
+{
+    @if (Model.User?.Id >= 1 && Model?.User.Id <= 100)
+    {
+        <table class="table">
+
+            <tbody>
+                <tr>
+                    <td width="10%">
+                        <div class="avatar">
+                            <img src=@Model.User.Avatar alt="avatarchik" style="width:200px;height:200px" />
+                            <div class="avatar_text">
+
+                                <p>
+                                    <a href="@Url.Action("UserById", "Users", new { id = @Model.User.Id })" class="user_link">
+                                        <span>@Model.User.Name</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="25">
+
+                        @if (Model.Todos?.Count > 0)
+                        {
+
+                            <table class="table table-hover w-aut">
+                                <thead>
+                                    <tr>
+                                        <td><h4><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Tods</h4></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var todo in Model.Todos)
+                                    {
+                                        <tr>
+                                            <td>
+
+                                                <a href="@Url.Action("TodoById", "Users", new { id = todo.Id })" class="elements">
+                                                    <span>@todo.Name</span>
+                                                </a>
+                                                (@todo.IsComplete)
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <h3>No Todos</h3>
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p>Invalid User ID</p>
+    }
+}

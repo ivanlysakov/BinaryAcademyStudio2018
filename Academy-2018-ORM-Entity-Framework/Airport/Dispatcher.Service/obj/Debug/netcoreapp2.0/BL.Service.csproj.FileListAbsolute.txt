@@ -1,0 +1,14 @@
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.csprojResolveAssemblyReference.cache
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.csproj.CoreCompileInputs.cache
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.AssemblyInfoInputs.cache
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.AssemblyInfo.cs
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\BL.Service.deps.json
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\BL.Service.dll
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\BL.Service.pdb
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\DAL.Repository.dll
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\Shared.dll
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\Shared.pdb
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\bin\Debug\netcoreapp2.0\DAL.Repository.pdb
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.csproj.CopyComplete
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.dll
+D:\work\Academy-2018-ORM-Entity-Framework-\Airport\Dispatcher.Service\obj\Debug\netcoreapp2.0\BL.Service.pdb
