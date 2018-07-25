@@ -32,7 +32,7 @@ namespace BL.Service.Services
 
         public async Task<AirplaneDTO> GetById(int id)
         {
-            return mapper.Map<AirplaneDTO>(await uow.Crews.Get(id));
+            return mapper.Map<AirplaneDTO>(await uow.Airplanes.Get(id));
         }
 
         public async Task Create(AirplaneDTO item)

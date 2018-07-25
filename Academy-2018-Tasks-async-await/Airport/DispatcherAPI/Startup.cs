@@ -33,7 +33,7 @@ namespace DAL
         public void ConfigureServices(IServiceCollection services)
         {
                                  
-            services.AddMvc();
+            
 
             //services from BL
                         
@@ -63,7 +63,8 @@ namespace DAL
             //automapper
 
             services.AddAutoMapper();
-            
+            services.AddCors();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +80,11 @@ namespace DAL
                 var context = scope.ServiceProvider.GetService<AirportContext>();
                 context.EnsureDatabaseSeeded();
             }
+
+            app.UseCors(builder => builder.WithOrigins("*")
+                                           .AllowCredentials()
+                                           .AllowAnyHeader()
+                                           .AllowAnyMethod());
             app.UseMvc();
         }
     }
