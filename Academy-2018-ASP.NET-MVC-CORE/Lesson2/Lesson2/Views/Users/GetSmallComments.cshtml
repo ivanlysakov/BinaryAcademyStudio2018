@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "GetSmallComments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Lesson2.Models.Helpers.UserComments
+
+@using (Html.BeginForm("GetSmallComments", "Users", FormMethod.Post))
+{
+    <h2>Small Comments by User</h2>
+    <p>Please enter User ID:</p>
+    @Html.TextBoxFor(x => x.User.Id);
+    <input type="submit" class="btn btn-primary" value="Show" />
+    @Html.ValidationMessageFor(m => m.User.Id, "User ID must be from range 1..100");
+
+}
+
+
+@if (Model != null)
+{
+    @if (Model.User?.Id >= 1 && Model.User?.Id <= 100)
+    {
+
+        <table class="table">
+
+            <tbody>
+                <tr>
+                    <td width="10%">
+                        <div class="avatar">
+                            <img src=@Model.User.Avatar alt="avatarchik" style="width:200px;height:200px" />
+                            <div class="avatar_text">
+
+                                <p>
+                                    <a href="@Url.Action("UserById", "Users", new { id = @Model.User.Id })" class="user_link">
+                                        <span>@Model.User.Name</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="25">
+                        @if (Model.Comments?.Count > 0)
+    {
+                    <table class="table table-hover w-aut">
+                        <thead>
+                            <tr>
+                                <td><h4><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Comments</h4></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var comment in Model.Comments)
+        {
+                    <tr>
+                        <td>@comment.Body <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> @comment.Likes</td>
+                    </tr>
+}
+
+                        </tbody>
+                    </table>
+
+}
+else
+{
+                    <h3>No comments</h3>
+}
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+        <p>Invalid User ID</p>
+    }
+}

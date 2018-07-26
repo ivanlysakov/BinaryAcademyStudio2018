@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewData["Title"] = "GetUserNewStruct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Lesson2.Models.Helpers.UserQueryHelper
+
+@using (Html.BeginForm("GetUserNewStruct", "Users", FormMethod.Post))
+{
+    <h2>GetUserNewStruct</h2>
+    <p>Please enter User ID:</p>
+    @Html.TextBoxFor(x => x.User.Id);
+
+    <input type="submit" class="btn btn-primary" value="Get" />
+    @Html.ValidationMessageFor(m => m.User.Id, "User ID must be from range 1..100");
+
+}
+
+@if (Model != null)
+{
+    @if (Model.User?.Id >= 1 && Model.User?.Id <= 100)
+
+
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>LatestPost</td>
+                    <td>PopularPostbyComments</td>
+                    <td>PopularPostbyLikes</td>
+                    <td>InComlpetedTodos</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td width="10%">
+                        <div class="avatar">
+                            <img src=@Model.User.Avatar alt="avatarchik" style="width:200px;height:200px" />
+                            <div class="avatar_text">
+
+                                <p>
+                                    <a href="@Url.Action("UserById", "Users", new { id = @Model.User.Id })" class="user_link">
+                                        <span>@Model.User.Name</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+
+                    @if (Model.UserQuery.LatestPost != null)
+                    {
+                        <td>
+                            <a href="@Url.Action("PostById", "Users", new { id = @Model.UserQuery.LatestPost.Id })" class="elements">
+                                <span>@Model.UserQuery.LatestPost.Title </span>
+                            </a>
+                            <br />
+                            @Model.UserQuery.LatestPost?.Body
+                            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>@Model.UserQuery.CommentsForLatestPost
+
+                        </td>
+
+
+                        <td>
+                            <a href="@Url.Action("PostById", "Users", new { id = @Model.UserQuery.PopularPostbyComments?.Id })" class="elements">
+                                <span>@Model.UserQuery.PopularPostbyComments?.Title </span>
+                            </a>
+                            <br />
+                            @Model.UserQuery.PopularPostbyComments?.Body 
+                          
+                            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>@Model.UserQuery.PopularPostbyComments?.Comments?.Count
+                        </td>
+
+                        <td>
+                            <a href="@Url.Action("PostById", "Users", new { id = @Model.UserQuery.PopularPostbyLikes?.Id })" class="elements">
+                                <span>@Model.UserQuery.PopularPostbyLikes?.Title </span>
+                            </a>
+
+                            @Model.UserQuery.PopularPostbyLikes?.Body <br />
+                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>@Model.UserQuery.PopularPostbyLikes?.Likes
+
+                        </td>
+                        <td>@Model.UserQuery.InComlpetedTodos </td>
+
+                    }
+                    else
+                    {
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@Model.UserQuery.InComlpetedTodos </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Invalid User ID</p>
+    }
+}
