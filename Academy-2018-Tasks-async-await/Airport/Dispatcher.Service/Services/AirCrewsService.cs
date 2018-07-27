@@ -85,9 +85,10 @@ namespace BL.Service.Services
             Task task1 = WriteToFileAsync(writeIntofile.ToString());
             //проблема з записом в БД ....так і не переміг її((( прийшлося городити костиль в мапері
             Task task2 = uow.Crews.CreateListAsync(mapper.Map<List<CrewDTO>, List<Crew>>(listCrewDTO));
-            Task task3 = uow.SaveAsync();
+         
 
-            await Task.WhenAll(new[] { task1,task2,task3 });
+            await Task.WhenAll(new[] { task1,task2});
+            await uow.SaveAsync();
 
 
             var addedCount = uow.Crews.GetRowsCount();

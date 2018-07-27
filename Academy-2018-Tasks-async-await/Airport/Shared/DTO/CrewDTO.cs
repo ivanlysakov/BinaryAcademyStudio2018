@@ -15,6 +15,7 @@ namespace Shared.DTO
         public PilotDTO Pilot { get; set; }
 
         public ICollection<HostessDTO> Hostesses { get; set; }
+
         public int DepartureID { get; set; }
 
     }

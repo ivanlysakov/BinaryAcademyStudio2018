@@ -31,9 +31,6 @@ namespace DAL.Repository.Repositories
 
         public override async Task Create(Crew item)
         {
-            
-            
-            
             await context.Set<Crew>().AddAsync(item);
         }
     }
