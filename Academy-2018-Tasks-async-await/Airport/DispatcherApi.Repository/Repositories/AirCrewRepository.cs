@@ -27,5 +27,14 @@ namespace DAL.Repository.Repositories
                 .FirstOrDefaultAsync(x=>x.Id==id);
 
         }
+
+
+        public override async Task Create(Crew item)
+        {
+            
+            
+            
+            await context.Set<Crew>().AddAsync(item);
+        }
     }
 }

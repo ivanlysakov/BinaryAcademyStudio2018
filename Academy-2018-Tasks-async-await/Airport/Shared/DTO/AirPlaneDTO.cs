@@ -17,7 +17,8 @@ namespace Shared.DTO
         public DateTime CreationDate { get; set; }
         
         public int Lifetime { get; set; }
+        public int DepartureID { get; set; }
 
-        
+
     }
 }

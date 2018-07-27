@@ -73,7 +73,7 @@ namespace DAL.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            await service.Update(modelDTO);
+            await service.Update(id, modelDTO);
 
             return Ok(modelDTO);
 

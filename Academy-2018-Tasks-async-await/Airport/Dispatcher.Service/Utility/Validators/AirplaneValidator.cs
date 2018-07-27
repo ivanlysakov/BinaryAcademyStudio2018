@@ -10,7 +10,7 @@ namespace BL.Service.Utility.Validators
         {
             RuleFor(a => a.Lifetime)
                 .NotNull()
-                .GreaterThan(3650);
+                .GreaterThan(0);
             RuleFor(a => a.Name)
                 .NotNull()
                 .NotEmpty()
@@ -19,8 +19,7 @@ namespace BL.Service.Utility.Validators
             RuleFor(a => a.CreationDate)
                 .NotNull()
                 .LessThan(DateTime.Now);
-            RuleFor(a => a.Type)
-                .NotNull();
+            
         }
     }
 }

@@ -43,26 +43,18 @@ namespace BL.Service.Services
             uow.Save();
         }
 
-        public async Task Update(TicketDTO modelDTO)
-        {
-            var dest = mapper.Map<TicketDTO, Ticket>(modelDTO);
-            await uow.Tickets.Update(dest);
-        }
         public async Task Update(int id, TicketDTO modelDTO)
-
         {
-            var source = uow.Tickets.Get(id);
             var dest = mapper.Map<TicketDTO, Ticket>(modelDTO);
-            await uow.Tickets.Update(dest);
-            await uow.SaveAsync();
+            await uow.Tickets.Update(dest, id);
         }
-
+                
         public async Task Delete(int id)
         {
             await uow.Tickets.Delete(id);
             await uow.SaveAsync();
         }
 
-
+       
     }
 }

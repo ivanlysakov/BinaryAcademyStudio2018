@@ -9,7 +9,7 @@ namespace BL.Service.Interfaces
         Task<List<DepartureDTO>> Get();
         Task<DepartureDTO> GetById(int id);
         Task Create(DepartureDTO entity);
-        Task Update(DepartureDTO entity);
+        Task Update(int id, DepartureDTO entity);
         Task Delete(int id);
     }
 }

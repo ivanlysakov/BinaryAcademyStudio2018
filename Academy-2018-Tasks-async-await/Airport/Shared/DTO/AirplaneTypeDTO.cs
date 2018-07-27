@@ -19,6 +19,8 @@ namespace Shared.DTO
         [Required]
         public int Cargo { get; set; }
 
-      
+        public int AirplaneId { get; set; }
+
+
     }
 }

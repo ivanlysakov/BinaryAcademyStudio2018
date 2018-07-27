@@ -145,7 +145,7 @@ namespace BL.Service.Services
         {
             var source = uow.Crews.Get(id);
             var dest = mapper.Map<CrewDTO, Crew>(modelDTO);
-            await uow.Crews.Update(dest);
+            await uow.Crews.Update(dest, id);
             await uow.SaveAsync();
         }
 
@@ -155,12 +155,7 @@ namespace BL.Service.Services
             await uow.SaveAsync();
         }
 
-        public async Task Update(CrewDTO modelDTO)
-        {
-            var dest = mapper.Map<CrewDTO, Crew>(modelDTO);
-            await uow.Crews.Update(dest);
-        }
-
+       
         
     }
 }

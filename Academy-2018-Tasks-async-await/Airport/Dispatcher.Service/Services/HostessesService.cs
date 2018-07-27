@@ -57,7 +57,7 @@ namespace BL.Service.Services
         {
             var source = uow.AirHostesses.Get(id);
             var dest = mapper.Map<HostessDTO, Hostess>(modelDTO);
-            await uow.AirHostesses.Update(dest);
+            await uow.AirHostesses.Update(dest,id);
             await uow.SaveAsync();
         }
 
@@ -67,11 +67,7 @@ namespace BL.Service.Services
             await uow.SaveAsync();
         }
 
-        public async Task Update(HostessDTO modelDTO)
-        {
-            var dest = mapper.Map<HostessDTO, Hostess>(modelDTO);
-            await uow.AirHostesses.Update(dest);
-        }
+        
 
     }
 }

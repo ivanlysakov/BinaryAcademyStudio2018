@@ -54,11 +54,18 @@ namespace DAL.Repository.Abstractions
             return await context.Set<TEntity>().FindAsync(id) != null;
         }
 
-        public async Task Update(TEntity item)
+        public async Task<TEntity> Update(TEntity item, int id)
         {
-            context.Set<TEntity>().Update(item);
-            await context.SaveChangesAsync();
-        
+            if (item == null)
+                return null;
+            TEntity exist = await context.Set<TEntity>().FindAsync(id);
+            if (exist != null)
+            {
+                context.Entry(exist).CurrentValues.SetValues(item);
+                await context.SaveChangesAsync();
+            }
+            return exist;
+
         }
 
         public async Task CreateListAsync(List<TEntity> list)
@@ -70,6 +77,8 @@ namespace DAL.Repository.Abstractions
         {
             return  context.Set<TEntity>().Count();
         }
+
+       
     }
 }
 

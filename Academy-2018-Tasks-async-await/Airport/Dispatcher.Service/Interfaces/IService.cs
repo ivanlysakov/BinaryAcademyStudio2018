@@ -11,7 +11,7 @@ namespace BL.Service.Services
         Task<T> GetById(int id);
         Task<List<T>> GetAsync();
         Task Delete(int id);
-        Task Update(T item);
+        Task<T> Update(T item, int id);
         Task Create (T item);
     }
 }

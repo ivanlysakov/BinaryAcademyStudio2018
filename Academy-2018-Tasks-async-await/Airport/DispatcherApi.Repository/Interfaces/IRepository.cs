@@ -13,7 +13,7 @@ namespace DAL.Repository.Interfaces
         Task <List<T>> GetAll();
         Task<T> Get(int id);
         Task Create(T item);
-        Task Update(T item);
+        Task<T> Update(T item, int id);
         Task Delete(int id);
         Task<bool> IsExist(int id);
         Task CreateListAsync(List<T> TEntity);
