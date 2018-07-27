@@ -18,8 +18,8 @@ namespace DAL.Repository.Models
         
         public ICollection<Hostess> Hostesses { get; set; }
 
-        //public int DepartureID { get; set; }
-        //Departure Departure { get; set; }
+        public int DepartureID { get; set; }
+        Departure Departure { get; set; }
 
     }
 }

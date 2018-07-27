@@ -22,8 +22,7 @@ namespace DAL.Repository.Abstractions
         {
             this.context = context;
         }
-
-
+        
         public virtual async Task<List<TEntity>> GetAll()
         {
             return await context.Set<TEntity>().ToListAsync();
@@ -31,10 +30,12 @@ namespace DAL.Repository.Abstractions
 
        public virtual async Task<TEntity> Get(int id)
         {
-            return await context.Set<TEntity>().FindAsync(id);
+           var item = context.Set<TEntity>().FindAsync(id);
+
+            return await item;
         }
 
-        public async Task Create(TEntity item)
+        public virtual async Task Create(TEntity item)
         {
             await context.Set<TEntity>().AddAsync(item);
         }
@@ -53,9 +54,11 @@ namespace DAL.Repository.Abstractions
             return await context.Set<TEntity>().FindAsync(id) != null;
         }
 
-        public Task Update(TEntity item)
+        public async Task Update(TEntity item)
         {
-            throw new NotImplementedException();
+            context.Set<TEntity>().Update(item);
+            await context.SaveChangesAsync();
+        
         }
 
         public async Task CreateListAsync(List<TEntity> list)

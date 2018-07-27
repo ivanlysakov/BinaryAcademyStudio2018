@@ -20,6 +20,12 @@ namespace DAL.Repository.Repositories
                     .Include(c => c.Hostesses)
                     .ToListAsync();
         }
+        public override async Task<Crew> Get(int id)
+        {
+            return await context.Crews.Include(c => c.Pilot)
+                .Include(c => c.Hostesses)
+                .FirstOrDefaultAsync(x=>x.Id==id);
 
+        }
     }
 }

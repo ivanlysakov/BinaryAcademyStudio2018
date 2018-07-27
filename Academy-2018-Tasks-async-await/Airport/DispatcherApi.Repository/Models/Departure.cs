@@ -20,7 +20,7 @@ namespace DAL.Repository.Models
 
         public Crew Crew { get; set; }
 
-       public Airplane Airplane { get; set; }
+        public Airplane Airplane { get; set; }
            
     }
 }

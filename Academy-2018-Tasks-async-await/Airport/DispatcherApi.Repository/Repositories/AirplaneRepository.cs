@@ -25,6 +25,13 @@ namespace DAL.Repository.Repositories
         {
             return await context.Airplanes.Include(a => a.Type).ToListAsync();
         }
+        
+        public override async Task<Airplane> Get(int id)
+        {
+            return await context.Airplanes.Include(a => a.Type).Where(x=>x.Id==id).FirstAsync();
+        }
+
+
     }
 }
 

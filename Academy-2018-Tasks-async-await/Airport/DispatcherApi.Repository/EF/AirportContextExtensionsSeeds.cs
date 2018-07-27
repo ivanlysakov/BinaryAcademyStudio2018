@@ -72,10 +72,10 @@ namespace DAL.Repository.EF
                 context.SaveChanges();
 
                 Crew crew1 = new Crew { CrewNumber = 222,
-                    //DepartureID = dep1.Id
+                    DepartureID = dep1.Id
                 };
                 Crew crew2 = new Crew { CrewNumber = 665,
-                   // DepartureID = dep2.Id
+                   DepartureID = dep2.Id
                 };
                
 
